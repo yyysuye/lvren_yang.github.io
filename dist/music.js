@@ -8,14 +8,14 @@ const ap = new APlayer({
         artist: '久石让',
         url: 'http://link.hhtjim.com/163/443242.mp3',
         cover: '',
-      }
-      /*{
-        name: '9420',
-        artist: '麦小兜',
-        url: 'http://up.mcyt.net/?down/45967.mp3',
-        cover: 'http://oeff2vktt.bkt.clouddn.com/image/8.jpg',
       },
       {
+        name: 'Variations on the Kanon By Pachelbel',
+        artist: 'George Winston',
+        url: 'http://link.hhtjim.com/163/1374348.mp3',
+        cover: '',
+      }
+      /*{
         name: '风筝误',
         artist: '刘珂矣',
         url: 'http://up.mcyt.net/?down/46644.mp3',
