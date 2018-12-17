@@ -3,6 +3,7 @@ const ap = new APlayer({
     fixed: true,
     autoplay: false,
 	preload : 'auto',
+	mutex: true,
     audio: [
       {
         name: "summer",
@@ -18,3 +19,4 @@ const ap = new APlayer({
       }
     ]
 });
+document.onload(ap.play());
