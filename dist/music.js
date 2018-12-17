@@ -15,11 +15,5 @@ const ap = new APlayer({
         url: 'http://link.hhtjim.com/163/1374348.mp3',
         cover: '',
       }
-      /*{
-        name: '风筝误',
-        artist: '刘珂矣',
-        url: 'http://up.mcyt.net/?down/46644.mp3',
-        cover: 'http://oeff2vktt.bkt.clouddn.com/image/96.jpg',
-      }*/
     ]
 });
