@@ -19,4 +19,3 @@ const ap = new APlayer({
       }
     ]
 });
-document.onload(ap.play());
