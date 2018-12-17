@@ -16,6 +16,12 @@ const ap = new APlayer({
         artist: 'George Winston',
         url: 'http://link.hhtjim.com/163/1374348.mp3',
         cover: '',
+      },
+      {
+        name: 'luv letter',
+        artist: 'DJ Okawari',
+        url: 'http://link.hhtjim.com/163/406232.mp3',
+        cover: '',
       }
     ]
 });
