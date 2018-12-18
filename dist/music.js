@@ -22,6 +22,12 @@ const ap = new APlayer({
         artist: 'DJ Okawari',
         url: 'http://link.hhtjim.com/163/406232.mp3',
         cover: '',
+      },
+      {
+        name: 'Mia & Sebastian’s Theme',
+        artist: 'From "La La Land" Soundtrack',
+        url: 'http://link.hhtjim.com/163/445867334.mp3',
+        cover: '',
       }
     ]
 });
