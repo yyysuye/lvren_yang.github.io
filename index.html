@@ -266,6 +266,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/nginx是什么/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旅人飏">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sensitive">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/19/nginx是什么/" itemprop="url">nginx是什么</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T17:00:19+08:00">
+                2018-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂谈/" itemprop="url" rel="index">
+                    <span itemprop="name">杂谈</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天学习在菜鸟教程上面学习react的时候，了解到腾讯云开发者平台，然后按照教程准备使用Cloud Studio，在配置环境的时候，看到一句代码里面用到nginx，然后就很好奇nginx是什么？</p>
+<h2 id="一、-nginx"><a href="#一、-nginx" class="headerlink" title="一、 nginx"></a>一、 nginx</h2><blockquote>
+<p>异步框架的 Web服务器，也可以用作反向代理，负载平衡器 和 HTTP缓存；</p>
+</blockquote>
+<p>Nginx是一款面向性能设计的HTTP服务器，相较于Apache、lighttpd具有占有内存少，稳定性高等优势。与旧版本（&lt;=2.2）的Apache不同，Nginx不采用每客户机一线程的设计模型，而是充分使用异步逻辑从而削减了上下文调度开销，所以并发服务能力更强。整体采用模块化设计，有丰富的模块库和第三方模块库，配置灵活。 在Linux操作系统下，Nginx使用epoll事件模型，得益于此，Nginx在Linux操作系统下效率相当高。同时Nginx在OpenBSD或FreeBSD操作系统上采用类似于epoll的高效事件模型kqueue。</p>
+<hr>
+<p>那么随即衍生出来的问题，什么是Web服务器，反向代理？</p>
+<h2 id="二、Web服务器"><a href="#二、Web服务器" class="headerlink" title="二、Web服务器"></a>二、Web服务器</h2><blockquote>
+<p>网页服务器（Web server）一词有两个意思：<br>一台负责提供网页的计算机，主要是各种编程语言构建而成，透过HTTP协议传给客户端（一般是指网页浏览器）。<br>一个提供网页的服务器程序。</p>
+</blockquote>
+<p>​    每一台网页服务器（第1个意思）会运行最少一个网页服务器程序（第2个意思）。作为第1个意思，大陆地区称为网站服务器。此外，也通称作Web服务器。</p>
+<p>​    每一个网页服务器程序都需要从网络接受HTTP请求，然后提供HTTP回复给请求者。HTTP回复一般包含一个HTML文件，有时也可以包含纯文本文件、图像或其他类型的文件。一般来说这些文件都存储在网页服务器的本地文件系统里，而URL和本地档名都有一个阶级组织结构的，服务器会简单的把URL对照到本地文件系统中。当正确安装和设置好网页服务器软件，服务器管理员会从服务器软件放置文件的地方指定一个本地路径名为根目录。</p>
+<h2 id="三、代理服务器"><a href="#三、代理服务器" class="headerlink" title="三、代理服务器"></a>三、代理服务器</h2><blockquote>
+<p>proxy，网络代理， 允许一个网络终端（一般为客户端）通过这个服务与另一个网络终端（一般为服务器）进行非直接的连接</p>
+</blockquote>
+<p>一般认为代理服务有利于保障网络终端的隐私或安全，防止攻击。</p>
+<p>一个完整的代理请求过程为：客户端首先与代理服务器创建连接，接着根据代理服务器所使用的代理协议，请求对目标服务器创建连接、或者获得目标服务器的指定资源（如：文件）。在后一种情况中，代理服务器可能对目标服务器的资源下载至本地缓存，如果客户端所要获取的资源在代理服务器的缓存之中，则代理服务器并不会向目标服务器发送请求，而是直接传回已缓存的资源。一些代理协议允许代理服务器改变客户端的原始请求、目标服务器的原始响应，以满足代理协议的需要。代理服务器的选项和设置在计算机程序中，通常包括一个“防火墙”，允许用户输入代理地址，它会遮盖他们的网络活动，可以允许绕过互联网过滤实现网络访问。代理服务器的基本行为就是接收客户端发送的请求后转发给其他服务器。代理不改变请求URI，会直接发送给前方持有资源的目标服务器。</p>
+<p>持有资源实体的服务器被称为源服务器。从源服务器返回的响应经过代理服务器后再传给客户端。</p>
+<h2 id="四、反向代理"><a href="#四、反向代理" class="headerlink" title="四、反向代理"></a>四、反向代理</h2><blockquote>
+<p>反向代理服务器架设在服务器端，通过缓冲经常被请求的页面来缓解服务器（如Web服务器）的工作量。</p>
+</blockquote>
+<p>服务器根据客户端的请求，从其关系的一组或多组后端服务器（如Web服务器）上获取资源，然后再将这些资源返回给客户端，客户端只会得知反向代理的IP地址，而不知道在代理服务器后面的服务器簇的存在。</p>
+<p>与前向代理不同，前向代理作为客户端的代理，将从互联网上获取的资源返回给一个或多个的客户端，服务端（如Web服务器）只知道代理的IP地址而不知道客户端的IP地址；而反向代理是作为服务器端（如Web服务器）的代理使用，而不是客户端。客户端借由前向代理可以间接访问很多不同互联网服务器（簇）的资源，而反向代理是供很多客户端都通过它间接访问不同后端服务器上的资源，而不需要知道这些后端服务器的存在，而以为所有资源都来自于这个反向代理服务器。</p>
+<ul>
+<li>对客户端隐藏服务器（簇）的IP地址</li>
+<li>安全：作为应用层防火墙，为网站提供对基于Web的攻击行为（例[DoS/DDoS）的防护，更容易排查恶意软件等</li>
+<li>为后端服务器（簇）统一提供加密和SSL加速（如SSL终端代理）</li>
+<li>负载均衡，若服务器簇中有负荷较高者，反向代理通过URL重写，根据连线请求从负荷较低者获取与所需相同的资源或备援</li>
+<li>对于静态内容及短时间内有大量访问请求的动态内容提供缓存服务</li>
+<li>对一些内容进行压缩，以节约带宽或为网络带宽不佳的网络提供服务</li>
+<li>减速上传</li>
+<li>为在私有网络下（如局域网）的服务器簇提供NAT穿透及外网发布服务</li>
+<li>提供HTTP访问认证</li>
+<li>突破互联网封锁（不常用，因为反向代理与客户端之间的连线不一定是加密连线，非加密连线仍有遭内容审查进而遭封禁的风险；此外面对针对域名的关键字过滤、DNS缓存污染/投毒攻击乃至深度数据包检测也无能为力）</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+	  
+	</div>	
+
+	<div>
+      
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/18/Git&&GitHub/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -682,7 +897,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -704,7 +919,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -799,7 +1014,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5k</span>
+    <span title="Site words total count">6.7k</span>
   
 </div>
 <div class="powered-by">
