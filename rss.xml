@@ -8,8 +8,26 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 07 Jan 2019 06:58:49 GMT</pubDate>
+    <pubDate>Wed, 09 Jan 2019 10:26:26 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>JS权威指南读书笔记</title>
+      <link>http://yoursite.com/2019/01/09/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <guid>http://yoursite.com/2019/01/09/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <pubDate>Wed, 09 Jan 2019 10:25:00 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;关于js：动态的，弱类型的；面向对象和函数式；语法缘与java，一等函数源于Scheme，基于原型的继承来源于Self；&lt;/li&gt;
+&lt;/ol&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ol><li>关于js：动态的，弱类型的；面向对象和函数式；语法缘与java，一等函数源于Scheme，基于原型的继承来源于Self；</li></ol><a id="more"></a><ol start="2"><li><p>语言核心：</p><ul><li><p>Unicode字符集</p></li><li><p>区分大小写，但是html不区分大小写，比如说html中可以将事件处理程序写成onClick,但是js中只能写成onclick</p></li><li><p>注释：//和/**/</p></li><li><p>直接量：程序中直接使用的数据值</p></li><li><p>标识符：对变量和函数进行和命名；字母、下划线、或$开头，后续可以是字母，数字，下划线和$</p></li><li><p>保留字</p></li><li><p>分号：为了防止前一句语句分号不小心被修改或者省略，可以在语句之前加上一个分号；</p></li><li><p>在return break continue和随后的表达式之间不能有换行，</p></li><li><p>在涉及“++”和“–”的时候，与表达式应当在同一行；</p></li><li><p>数据类型：原始类型（数字、字符串、布尔值、null和undefined）和对象类型；</p></li><li><p>对象是属性的集合，属性由名/值对组成；</p></li><li><p>特殊的对象：全局对象；普通对象是“命名值”的无序集合；数组表示带编号的有序集合；特殊的对象；特殊的对象3：函数；具有与它相关联的可执行代码的对象；如果函数用来初始化（使用new运算符）一个新建的对象，称为（constructor）构造函数；每个构造函数定义了一类（class）对象——由构造函数初始化的对象组成的集合；类可以看做是对象类型的子类型。Array类、Function类、Date类、RegExp类、Error类；</p></li><li><p>数据类型本身可以调用方法来操作值；如数组a.sort();值也可以拥有方法，但是只有null和undefined无法拥有方法；数据类型也可分为拥有方法的类型和不能拥有方法的类型；可变类型和不可变类型；对象和数组属于可变类型；js程序可以更改对象属性值和数组元素的值；数字、布尔值、null和undefined属于不可变类型；字符串可以看成由字符组成的数组；在js中不可变；</p></li><li><p>可以进行数据类型转换；</p></li><li><p>变量是无类型的；</p></li></ul></li><li><p>数字：</p><ul><li><p>js不分整数值和浮点数值；所有数字均用浮点数表示；数字直接量</p></li><li><p>整形直接量：十进制；十六进制0x/0X；八进制0，严格模式禁止八进制</p></li><li><p>浮点型直接量：实数写法或指数计数法；</p></li><li><p>算术运算：+-*/%(基本)；Math.paw(2,53)(复杂)</p></li><li><p>溢出、下溢和被零整除不会报错；</p></li><li><p>全局变量Infinity和NaN表示无穷大和非数值，只读；</p></li></ul></li><li><p>字符串直接量：</p><ul><li><p>\反斜可以将字符串拆分数行</p></li><li><p>转义字符</p></li><li><p>字符串使用：</p></li><li><p>+：连接</p></li><li><p>s.length：长度；</p></li><li><p>在js中字符串是固定不变的；</p></li><li><p>RegExp具有实用API的特殊对象；</p></li></ul></li><li><p>布尔值：</p><ul><li><p>true和false</p></li><li><p>任何js的值都可转换成布尔值；</p></li><li><p>转换成false：undefined、null、0、-0、NaN、””；</p></li><li><p>其他转换成true</p></li></ul></li><li><p>null:</p><ul><li><p>常用来描述空值；</p></li><li><p>typeof null 返回object；特殊的对象值，非对象</p></li></ul></li><li><p>undefined:</p><ul><li><p>预定义的全局变量；只读</p></li><li><p>typeof undefined  返回undefined</p></li></ul></li><li><p>对象：</p><ul><li><p>是一种复合值，是属性或已命名值的集合；</p></li><li><p>字符串有自己的属性方法，当引用字符串的属性，会将字符串通过调用new String（s）的方式转换成对象，这个对象继承字符串的方法，并被用来处理属性的引用，一旦属性引用结束，新创建的对象就会销毁，看起来是这样；数字和布尔值也有各自的方法；</p></li><li><p>var s = “test”;s.len=4;var t =s,len;//t为undefined；</p></li><li><p>存取字符串、数字或布尔值的属性时创建的临时对象称做包装对象；</p></li><li><p>字符串、数字和布尔值的属性都是只读的；</p></li><li><p>可通过String()，Number()或Boolean()构造函数来显式创建包装对象</p></li><li><p>“==”等于运算符将原始值和其包装对象视为相等，但“===”全等运算符将它们视为不等</p></li><li>原始值不可变，原始值的比较是值的比较；</li><li>将对象称为引用类型，对象值都是引用，对象的比较均是引用的比较，当且仅当它们引用同一个基对象时，才相等；</li></ul></li><li><p>类型转换：</p><p><img src="http://pjx6k98jg.bkt.clouddn.com/Image.png" alt=""></p></li><li><p>显示类型转换：</p><ul><li><p>做显式类型转换最简单的方法就是使用Boolean()、Number()、String()或Object()函数</p></li><li><p>除了null或undefined之外的任何值都具有toString()方法；</p></li><li><p>Number类定义的toString()方法可以接收表示转换基数（radix）[6]的可选参数，如果不指定此参数，转换规则将是基于十进制</p></li></ul></li><li><p>对象转换为原始值：</p><ul><li>对象到布尔值的转换非常简单：所有的对象（包括数组和函数）都转换为true。对于包装对象亦是如此：new Boolean(false)是一个对象而不是原始值，它将转换为true；</li></ul></li><li><p>声明变量：</p><ul><li><p>全局变量和局部变量，局部作用域嵌套</p></li><li><p>函数内，局部变量的优先级高于全局变量</p></li><li><p>函数作用域：在函数内声明的所有变量在函数体内始终是可见的；导致声明提前；</p></li><li><p>当声明一个js全局变量时，实际是定义全局对象的一个属性；</p></li></ul></li></ol><h2 id="二、表达式与运算符"><a href="#二、表达式与运算符" class="headerlink" title="二、表达式与运算符"></a>二、表达式与运算符</h2>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/01/09/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>html&amp;css</title>
