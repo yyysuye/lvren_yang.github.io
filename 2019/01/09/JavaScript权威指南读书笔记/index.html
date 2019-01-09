@@ -93,7 +93,8 @@
 <meta property="og:description" content="一、概述 关于js：动态的，弱类型的；面向对象和函数式；语法缘与java，一等函数源于Scheme，基于原型的继承来源于Self；">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pjx6k98jg.bkt.clouddn.com/Image.png">
-<meta property="og:updated_time" content="2019-01-09T10:26:26.299Z">
+<meta property="og:image" content="http://pjx6k98jg.bkt.clouddn.com/%E8%BF%90%E7%AE%97%E7%AC%A6.png">
+<meta property="og:updated_time" content="2019-01-09T10:43:25.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS权威指南读书笔记">
 <meta name="twitter:description" content="一、概述 关于js：动态的，弱类型的；面向对象和函数式；语法缘与java，一等函数源于Scheme，基于原型的继承来源于Self；">
@@ -355,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  2.5k
                 </span>
               
 
@@ -371,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  8
                 </span>
               
             </div>
@@ -544,7 +545,107 @@
 </ul>
 </li>
 </ol>
-<h2 id="二、表达式与运算符"><a href="#二、表达式与运算符" class="headerlink" title="二、表达式与运算符"></a>二、表达式与运算符</h2>
+<h2 id="二、表达式与运算符"><a href="#二、表达式与运算符" class="headerlink" title="二、表达式与运算符"></a>二、表达式与运算符</h2><ol>
+<li><p>原始表达式</p>
+<ul>
+<li><p>直接量、关键字、变量</p>
+</li>
+<li><p>关键字可以是原始表达式，比如true、false、null、this（返回“当前”对象）</p>
+</li>
+</ul>
+</li>
+<li><p>数组初始化表达式：</p>
+<ul>
+<li><p>[,,,]；</p>
+</li>
+<li><p>数组可以嵌套；对数组初始化表达式求值的时候，内部的元素表达式会各自计算一次，所以每次计算的值有可能是不同的；列表之间的逗号可以省略，会填补undefined，结尾处留下单个逗号，不会添加undefined元素</p>
+</li>
+<li><p>对象初始化表达式可称为对象直接量：{属性名：属性值，，，}；可以嵌套；</p>
+</li>
+</ul>
+</li>
+<li><p>函数定义表达式：</p>
+<ul>
+<li>也可称为函数直接量；function（，，，）{}</li>
+</ul>
+</li>
+<li><p>属性访问表达式：</p>
+<ul>
+<li>expression.identifer或者expression[expression]; </li>
+<li>得到一个对象属性或者一个数组元素的值；</li>
+</ul>
+</li>
+<li><p>调用表达式：</p>
+<ul>
+<li>一种调用函数或者方法的语法表示；函数表达式(,,,);</li>
+</ul>
+</li>
+<li><p>对象创建表达式：</p>
+<ul>
+<li><p>创建一个对象并且调用构造函数初始化新对象的属性；</p>
+</li>
+<li><p>new Object();如果不传参，()可以省略</p>
+</li>
+</ul>
+</li>
+<li><p>运算符：</p>
+<blockquote>
+<p>算术表达式、比较表达式、逻辑表达式和赋值表达式；</p>
+</blockquote>
+<p><img src="http://pjx6k98jg.bkt.clouddn.com/%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt=""></p>
+</li>
+<li><p>关系表达式：</p>
+<ul>
+<li><p>相等和不等：</p>
+<p>=、==、===：赋值、相等、恒等</p>
+<p>对于数字和字符串操作符来说，加号运算符和比较运算符的行为都有所不同，前者更偏爱字符串，如果它的其中一个操作数是字符串的话，则进行字符串连接操作。而比较运算符则更偏爱数字，只有在两个操作数都是字符串的时候，才会进行字符串的比较</p>
+</li>
+<li><p>in运算符</p>
+<p>in运算符希望它的左操作数是一个字符串或可以转换为字符串，希望它的右操作数是一个对象；</p>
+<p>如果右侧的对象拥有一个名为左操作数值的属性名，那么表达式返回true</p>
+</li>
+<li><p>instanceof</p>
+<p>instanceof运算符希望左操作数是一个对象，右操作数标识对象的类。如果左侧的对象是右侧类的实例，则表达式返回true；否则返回false；</p>
+</li>
+</ul>
+</li>
+<li><p>逻辑表达式：</p>
+<ul>
+<li><p>逻辑与&amp;&amp;：</p>
+<ol>
+<li>当操作数都是布尔值的时候，&amp;&amp;对两个值执行布尔与操作，只有两个数都是true的时候返回true；</li>
+<li><p>操作数并不一定是布尔值，假值：null、undefined、NaN、0、-0、false、“”；&amp;&amp;可以对真值和假值进行布尔与操作，如果都为真，返回真值，至少一个为假，返回一个假值；</p>
+</li>
+<li><p>运算符首先计算左操作数的值， 如果是假值，则结果为假，所以此时返回左值，不会计算右值；如果左值为真，计算右值，如果右值为真，结果为真，如果右值为假，则整个表达式也为假，所以左值为真，返回右值；</p>
+</li>
+</ol>
+</li>
+<li><p>逻辑或||：</p>
+<p>​    会首先计算左侧的表达式。如果计算结果为真值，那么返回这个真值。否则，再计算第二个操作数的值，即计算右侧的表达式，并返回这个表达式的计算结果；</p>
+</li>
+<li><p>逻辑非！：</p>
+<p>​    将操作数的布尔值进行求反；“!”运算符首先将其操作数转换为布尔值，，然后再对布尔值求反。也就是说“!”总是返回true或者false，并且，可以通过使用两次逻辑非运算来得到一个值的等价布尔值：!!x</p>
+</li>
+</ul>
+</li>
+<li><p>表达式计算：</p>
+<ul>
+<li><p>JavaScript同样可以解释运行由JavaScript源代码组成的字符串，并产生一个值；eval();是一个运算符也是一个函数；</p>
+</li>
+<li><p>eval()只有一个参数。如果传入的参数不是字符串，它直接返回这个参数。如果参数是字符串，它会把字符串当成JavaScript代码进行编译（parse）；</p>
+</li>
+<li><p>如果编译失败则抛出一个语法错误（SyntaxError）异常。如果编译成功，则开始执行这段代码，并返回字符串中的最后一个表达式或语句的值，如果最后一个表达式或语句没有值，则最终返回undefined；</p>
+</li>
+<li><p>eval()使用了调用它的变量作用域环境；</p>
+</li>
+<li><p>直接调用eval()时，它总是在调用它的上下文作用域内执行；</p>
+</li>
+<li><p>其他的间接调用则使用全局对象作为其上下文作用域，并且无法读、写、定义局部变量和函数；</p>
+</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     
@@ -811,7 +912,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.6k</span>
+    <span title="Site words total count">9.8k</span>
   
 </div>
 <div class="powered-by">
