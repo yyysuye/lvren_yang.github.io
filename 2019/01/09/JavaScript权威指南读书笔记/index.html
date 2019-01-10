@@ -94,7 +94,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pjx6k98jg.bkt.clouddn.com/Image.png">
 <meta property="og:image" content="http://pjx6k98jg.bkt.clouddn.com/%E8%BF%90%E7%AE%97%E7%AC%A6.png">
-<meta property="og:updated_time" content="2019-01-09T10:43:25.843Z">
+<meta property="og:image" content="http://pjx6k98jg.bkt.clouddn.com/typeof.png">
+<meta property="og:updated_time" content="2019-01-10T10:12:43.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS权威指南读书笔记">
 <meta name="twitter:description" content="一、概述 关于js：动态的，弱类型的；面向对象和函数式；语法缘与java，一等函数源于Scheme，基于原型的继承来源于Self；">
@@ -356,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  4.3k
                 </span>
               
 
@@ -372,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  15
                 </span>
               
             </div>
@@ -630,19 +631,128 @@
 </li>
 <li><p>表达式计算：</p>
 <ul>
-<li><p>JavaScript同样可以解释运行由JavaScript源代码组成的字符串，并产生一个值；eval();是一个运算符也是一个函数；</p>
+<li>JavaScript同样可以解释运行由JavaScript源代码组成的字符串，并产生一个值；eval();是一个运算符也是一个函数；</li>
+<li>eval()只有一个参数。如果传入的参数不是字符串，它直接返回这个参数。如果参数是字符串，它会把字符串当成JavaScript代码进行编译（parse）；</li>
+<li>如果编译失败则抛出一个语法错误（SyntaxError）异常。如果编译成功，则开始执行这段代码，并返回字符串中的最后一个表达式或语句的值，如果最后一个表达式或语句没有值，则最终返回undefined；</li>
+<li>eval()使用了调用它的变量作用域环境；</li>
+<li>直接调用eval()时，它总是在调用它的上下文作用域内执行；</li>
+<li>其他的间接调用则使用全局对象作为其上下文作用域，并且无法读、写、定义局部变量和函数；</li>
+</ul>
 </li>
-<li><p>eval()只有一个参数。如果传入的参数不是字符串，它直接返回这个参数。如果参数是字符串，它会把字符串当成JavaScript代码进行编译（parse）；</p>
+<li><p>其他运算符：</p>
+<ul>
+<li><p>条件运算符：三元运算符，？：</p>
+<ul>
+<li>条件运算符的操作数可以是任意类型。第一个操作数当成布尔值，如果它是真值，那么将计算第二个操作数，并返回其计算结果。否则，如果第一个操作数是假值，那么将计算第三个操作数，并返回其计算结果</li>
+</ul>
 </li>
-<li><p>如果编译失败则抛出一个语法错误（SyntaxError）异常。如果编译成功，则开始执行这段代码，并返回字符串中的最后一个表达式或语句的值，如果最后一个表达式或语句没有值，则最终返回undefined；</p>
+<li><p>typeof运算符：放在其单个操作数的前面，操作数可以是任意类型。返回值为表示操作数类型的一个字符串；typeof可以带上()：typeof(i);</p>
+<p><img src="http://pjx6k98jg.bkt.clouddn.com/typeof.png" alt=""></p>
 </li>
-<li><p>eval()使用了调用它的变量作用域环境；</p>
+<li><p>delete运算符：</p>
+<p>删除对象属性或者数组元素；删除了数组的元素，但是数组的长度仍然没有改变；</p>
+<p>delete希望他的操作数是一个左值，如果它不是左值，那么delete将不进行任何操作同时返回true；否则，delete将试图删除这个指定的左值；如果删除成功，delete将返回true</p>
+<p>一些内置核心和客户端属性是不能删除的，用户通过var语句声明的变量不能删除；</p>
+<p>通过function语句定义的函数和函数参数也不能删除；</p>
 </li>
-<li><p>直接调用eval()时，它总是在调用它的上下文作用域内执行；</p>
+<li><p>void运算符</p>
+<p>void是一元运算符，它出现在操作数之前，操作数可以是任意类型。不常用；</p>
 </li>
-<li><p>其他的间接调用则使用全局对象作为其上下文作用域，并且无法读、写、定义局部变量和函数；</p>
+<li><p>逗号运算符：二元运算符，它的操作数可以是任意类型。</p>
+<p>它首先计算左操作数，然后计算右操作数，最后返回右操作数的值；最常用的场景是在for循环中；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,j=<span class="number">10</span>;i＜j;i++,j--)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i+j);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+</li>
+</ol>
+<h2 id="三、语句"><a href="#三、语句" class="headerlink" title="三、语句"></a>三、语句</h2><blockquote>
+<p>js语句是以分号结束；一系列可执行语句的集合；</p>
+</blockquote>
+<ol>
+<li><p>表达式语句</p>
+<ul>
+<li><p>赋值语句</p>
+</li>
+<li><p>递增运算符（++）和递减运算符（–）和赋值语句有关</p>
+</li>
+<li><p>delete运算符的重要作用是删除一个对象的属性，所以，它一般作为语句使用，而不是作为复杂表达式的一部分</p>
+</li>
+<li>函数调用是表达式语句的另一个大类</li>
+</ul>
+</li>
+<li><p>复合语句和空语句</p>
+<ul>
+<li>复合语句：将多条语句联合在一起，形成一条复合语句；用花括号括起来；语句块结尾不需要分号；js没有块级作用域；</li>
+<li>空语句：允许包含0条语句的空句；如果有特殊的目的需要使用空语句，最好在代码中添加注释，这样可以更清楚地说明这条空语句是有用的；</li>
+</ul>
+</li>
+<li><p>声明语句</p>
+<blockquote>
+<p>var和function(es6)</p>
+</blockquote>
+<ul>
+<li><p>var:</p>
+<p>用来声明一个或多个变量；</p>
+<p>声明局部变量和全局变量，全局变量是全局对象的属性，var生命的变量无法使用delete删除 ；</p>
+<p>没有指定初始化表达式，则初始值为undefined；</p>
+<p>变量声明提升；</p>
+<p>多次声明</p>
+</li>
+<li><p>function：用来定义函数；尽管函数声明语句和函数定义表达式包含相同的函数名，但二者仍然不同。两种方式都创建了新的函数对象，但函数声明语句中的函数名是一个变量名，变量指向函数对象。和通过var声明变量一样，函数定义语句中的函数被显式地“提前”到了脚本或函数的顶部。因此它们在整个脚本和函数内都是可见的。使用var的话，只有变量声明提前了——变量的初始化代码仍然在原来的位置。然而使用函数声明语句的话，函数名称和函数体均提前：脚本中的所有函数和函数中所有嵌套的函数都会在当前上下文中其他代码之前声明。也就是说，可以在声明一个JavaScript函数之前调用它；</p>
+</li>
+</ul>
+</li>
+<li><p>条件语句</p>
+<ul>
+<li><p>if语句：else总是与就近的if语句匹配；</p>
+</li>
+<li><p>switch：</p>
+<p>​    case子句中的表达式匹配按照”===“运算符进行；</p>
+<p>​    表达式和case的匹配并不会做任何类型转换；</p>
+</li>
+</ul>
+</li>
+<li><p>循环</p>
+<ul>
+<li><p>while(true)：会创建一个死循环；</p>
+</li>
+<li><p>do/while：在循环的底部检测循环表达式；循环体至少会执行一次；</p>
+</li>
+<li><p>for：计数器变量 初始化initialize、检测test、更新increment；for(;;)死循环；省略test表达式，是一个死循环；</p>
+</li>
+<li><p>for/in：</p>
+<p>​    for(variable in object)statement; variable通常是一个变量名，也可以是一个可以产生左值的表达式或者一个通过var语句声明的变量，总之必须是一个适用于赋值表达式左侧的值；</p>
+<p>​    object是一个表达式，这个表达式的计算结果是一个对象；</p>
+<p>​    更方便地遍历对象属性成员；</p>
+<p>​    在每次循环之前，JavaScript都会先计算variable表达式的值，并将属性名（一个字符串）赋值给它；</p>
+<p>​    只可遍历可枚举属性；</p>
+<p>​    由JavaScript语言核心所定义的内置方法就不是“可枚举的”；</p>
+<p>​    由JavaScript语言核心所定义的内置方法就不是“可枚举的”；代码中定义的所有属性和方法都是可枚举的；</p>
+<p>​    对象可以继承其他对象的属性，那些继承的自定义属性也可以使用for/in枚举出来；</p>
+<p>​    并没有指定for/in循环按照何种顺序来枚举对象属性；</p>
+<p>​    主流浏览器厂商的JavaScript实现是按照属性定义的先后顺序来枚举简单对象的属性，先定义的属性先枚举</p>
+</li>
+</ul>
+</li>
+<li><p>跳转</p>
+<blockquote>
+<p>得JavaScript的执行可以从一个位置跳转到另一个位置；</p>
+</blockquote>
+<ul>
+<li><p>break语句是跳转到循环或者其他语句的结束；</p>
+</li>
+<li><p>continue语句是终止本次循环的执行并开始下一次循环的执行；</p>
+</li>
+<li>JavaScript中的语句可以命名或带有标签，break和continue可以标识目标循环或者其他语句标签；</li>
+<li>return语句让解释器跳出函数体的执行，并提供本次调用的返回值。throw语句触发或者“抛出”一个异常，它是与try/catch/finally语句一同使用的，这些语句指定了处理异常的代码逻辑。这是一种复杂的跳转语句，当抛出一个异常的时候，程序将跳转至最近的闭合异常处理程序，这个异常处理程序可以是在同一个函数中或者在更高层的调用栈中；</li>
+<li>标签语句：identifer:statement；</li>
+<li>break:单独使用是立即退出最内层的循环或者switch语句；可以跟一个语句标签：break labelname；当break和标签一块使用时，程序将跳转到这个标签所标识的语句块的结束，或者直接终止这个闭合语句块的执行；在break关键字和labelname之间不能换行；对于一条带标签的函数定义语句来说，不能从函数内部通过这个标签来跳转到函数外部；</li>
+<li>continue：不管continue语句带不带标签，它只能在循环体内使用。在其他地方使用将会报语法错误；continue语句在while和for循环中的区别，while循环直接进入下一轮的循环条件判断，但for循环首先计算其increment表达式，然后判断循环条件；</li>
+<li>return:只能在函数体内出现；</li>
+<li></li>
+</ul>
+</li>
+<li><p>其他语句类型</p>
 </li>
 </ol>
 
@@ -877,7 +987,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、概述"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、表达式与运算符"><span class="nav-number">2.</span> <span class="nav-text">二、表达式与运算符</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、概述"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、表达式与运算符"><span class="nav-number">2.</span> <span class="nav-text">二、表达式与运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、语句"><span class="nav-number">3.</span> <span class="nav-text">三、语句</span></a></li></ol></div>
             
 
           </div>
@@ -912,7 +1022,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.8k</span>
+    <span title="Site words total count">11.6k</span>
   
 </div>
 <div class="powered-by">
